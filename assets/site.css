@@ -93,7 +93,8 @@ button{font:inherit;color:inherit}
 .hero-media{position:absolute;top:0;bottom:0;right:0;width:60%;z-index:0}
 .hero-img,.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
 .hero-img,.hero-vid{transform:translateZ(0);backface-visibility:hidden}
-.hero-vid{opacity:0;transition:opacity 1.2s ease}.hero-vid.on{opacity:1}
+/* opacity < 1 i filtr wyłączają „nakładkę sprzętową” wideo w Chrome/Safari: film jest zawsze składany tą samą ścieżką, więc kolor nie zmienia się przy przewijaniu */
+.hero-vid{opacity:0;filter:brightness(1.001);transition:opacity 1.2s ease}.hero-vid.on{opacity:.999}
 .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--deep) 0%,rgba(6,15,29,.92) 10%,rgba(6,15,29,.7) 24%,rgba(6,15,29,.35) 40%,rgba(6,15,29,.1) 56%,rgba(6,15,29,0) 70%),linear-gradient(0deg,rgba(6,15,29,.55),rgba(6,15,29,0) 30%)}
 .js .hero-media{opacity:0;transform:scale(1.04);transition:opacity 1.2s var(--ease),transform 1.8s var(--ease)}
 .js .ready .hero-media{opacity:1;transform:none}
