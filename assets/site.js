@@ -23,12 +23,12 @@
     else requestAnimationFrame(function () { requestAnimationFrame(topIn); });
   }
 
-  /* film w hero: bez oszczędzania danych i bez ograniczenia ruchu; plik gra do przodu i do tyłu, więc pętla jest płynna */
+  /* film w hero: bez oszczędzania danych i bez ograniczenia ruchu; odtwarzany raz i zatrzymuje się na ostatniej klatce */
   var vid = d.querySelector('.hero-vid'), conn = navigator.connection || {};
   if (vid && !reduce && !conn.saveData && !/(^|-)2g$/.test(conn.effectiveType || '')) {
     w.addEventListener('load', function () {
       setTimeout(function () {
-        vid.loop = true; vid.src = vid.dataset.src;
+        vid.src = vid.dataset.src;
         vid.addEventListener('canplaythrough', function () {
           var p = vid.play(); if (p && p.then) p.then(function () { vid.classList.add('on'); }, function () {});
         }, { once: true });
