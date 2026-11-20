@@ -5,7 +5,7 @@
 {% set ns = namespace(n=0, years=[], cnt={}) %}
 {% for r in realizacje %}{% set ns.n = ns.n + r.zdjecia|length %}{% if r.rok not in ns.years %}{% set _ = ns.years.append(r.rok) %}{% endif %}{% endfor %}
 {% block main %}
-{% call phead("Realizacje", "Nasze <em>realizacje</em>", "Wybierz rodzaj obiektu albo rok. Kliknięcie karty otwiera zdjęcia z budowy.", "uslugi-oswietlenie") %}
+{% call phead("Realizacje", "Nasze <em>realizacje</em>", "Wybierz rodzaj obiektu albo rok. Kliknięcie karty otwiera zdjęcia z budowy.", "head-realizacje") %}
 <dl class="plate plate-head rv" style="--d:.45s">
   <div><dt>Obiekty</dt><dd>{{ realizacje|length }}</dd></div>
   <div><dt>Zdjęcia</dt><dd>{{ ns.n }}</dd></div>

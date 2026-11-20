@@ -273,7 +273,7 @@ button{font:inherit;color:inherit}
 /* ---------- podstrony ---------- */
 .phead{position:relative;overflow:hidden;background:var(--deep);min-height:clamp(24rem,52svh,34rem);display:flex;align-items:flex-end;padding-block:clamp(4rem,9vh,6rem) clamp(2.5rem,6vh,4rem)}
 .phead-pic{position:absolute;top:0;bottom:0;right:0;width:52%}
-.phead-pic img{width:100%;height:100%;object-fit:cover;opacity:.75}
+.phead-pic img{width:100%;height:100%;object-fit:cover;object-position:right center;opacity:.75}
 .phead-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--deep),rgba(6,15,29,.5) 35%,rgba(6,15,29,.1))}
 .phead-in{position:relative;z-index:1}
 .phead h1{font-size:clamp(2.8rem,1.6rem + 4vw,5.4rem);line-height:1;color:#fff;max-width:16ch}

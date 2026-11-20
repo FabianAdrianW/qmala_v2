@@ -3,7 +3,7 @@
 {% set title = "Oferta: instalacje, rozdzielnice, LCN, pomiary | Qmala" %}
 {% set description = "Instalacje elektryczne, rozdzielnice, automatyka LCN, oświetlenie i iluminacje, projekty, pomiary, odgromy, sieci i monitoring. Wrocław i cała Polska." %}
 {% block main %}
-{% call phead("Oferta", "Oferta <em>dla domów i firm</em>", "Projekt, montaż, pomiary i serwis w jednych rękach. Wybierz obszar albo przewiń całą ofertę.", "uslugi-rozdzielnice") %}
+{% call phead("Oferta", "Oferta <em>dla domów i firm</em>", "Projekt, montaż, pomiary i serwis w jednych rękach. Wybierz obszar albo przewiń całą ofertę.", "head-oferta") %}
 <nav class="jump rv" style="--d:.45s" aria-label="Obszary oferty">
   {% for g in oferta %}<a href="#{{ g.id }}"><svg viewBox="0 0 24 24" aria-hidden="true">{{ g.ico }}</svg>{{ g.krotko }}</a>{% endfor %}
 </nav>
