@@ -3,7 +3,7 @@
 {% set title = "Referencje i listy od klientów | Qmala Wrocław" %}
 {% set description = "Listy referencyjne dla Zakładu Elektro-Instalacyjnego Wojciech Kumala od wykonawców, inwestorów i instytucji z Wrocławia. Skany do przeczytania w całości." %}
 {% block main %}
-{% call phead("Referencje", "Mamy to <em>na piśmie</em>", "Listy od firm i instytucji, dla których pracowaliśmy. Kliknij skan, żeby przeczytać cały list.", "krok-odbior") %}{% endcall %}
+{% call phead("Referencje", "Listy <em>referencyjne</em>", "Listy od firm i instytucji, dla których pracowaliśmy. Kliknij skan, żeby przeczytać cały list.", "krok-odbior") %}{% endcall %}
 
 <section class="sec grid-paper" aria-label="Listy referencyjne">
   <div class="wrap">
@@ -17,7 +17,7 @@
         <div class="doc-tx">
           <p class="sheet-h"><span>List referencyjny</span><span>{{ l.rok }}</span></p>
           <h2>{{ l.firma }}</h2>
-          {% if l.zakres %}<p>{{ l.zakres }}</p>{% endif %}
+          {% if l.zakres %}<p class="sheet-z"><b>Zakres robót</b>{{ l.zakres }}</p>{% endif %}
           {% if l.cytat %}<blockquote>„…{{ l.cytat }}”</blockquote>{% endif %}
         </div>
       </article>

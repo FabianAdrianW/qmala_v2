@@ -1,9 +1,11 @@
 <section class="screen dark" id="jak" aria-labelledby="jak-h">
   <div class="wrap">
     <div class="head head-split rv">
-      <h2 id="jak-h">Od telefonu <em>do protokołu</em></h2>
-      <p>Cztery etapy, jeden zespół. Wiesz, kto odpowiada za każdy z nich.</p>
+      <h2 id="jak-h">Jak przebiega <em>zlecenie</em></h2>
+      <p>Każdy etap prowadzi ta sama ekipa, od pierwszej rozmowy do przekazania protokołów.</p>
     </div>
+    <div class="circuit-wrap">
+    <span class="c-wire" aria-hidden="true"><i></i></span>
     <ol class="circuit" id="circuit">
       {% for k in kroki %}
       <li style="--i:{{ loop.index0 }}">
@@ -15,5 +17,6 @@
       </li>
       {% endfor %}
     </ol>
+    </div>
   </div>
 </section>

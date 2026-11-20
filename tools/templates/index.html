@@ -22,8 +22,8 @@
     <dl class="plate rv" style="--d:.7s" aria-label="Najważniejsze dane firmy">
       <div><dt>Rok założenia</dt><dd>1978</dd></div>
       <div><dt>Pokolenia</dt><dd>2</dd></div>
-      <div><dt>Obiekty na liście</dt><dd>{{ realizacje|length }}</dd></div>
-      <div><dt>Zasięg</dt><dd>Cała Polska</dd></div>
+      <div><dt>Realizacje</dt><dd>{{ realizacje|length }}</dd></div>
+      <div><dt>Obszar</dt><dd>Cała Polska</dd></div>
     </dl>
   </div>
   <svg class="hero-wire" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5H1000"/><path class="pulse" pathLength="100" d="M0 5H1000"/></svg>
@@ -72,8 +72,8 @@
 <section class="screen" id="realizacje" aria-labelledby="re-h">
   <div class="wrap">
     <div class="head head-split rv">
-      <h2 id="re-h">Rejestr <em>obiektów</em></h2>
-      <p>Uczelnie, muzeum, szkoły, osiedla i zakłady. Zdjęcia w tej sekcji pokazują prawdziwe realizacje.</p>
+      <h2 id="re-h">Wybrane <em>realizacje</em></h2>
+      <p>Pracowaliśmy dla uczelni, muzeum, szkół, deweloperów i firm. Zdjęcia w tej sekcji pochodzą z naszych budów.</p>
     </div>
     <div class="reg">
       <div class="viewer rv" id="viewer">
@@ -106,9 +106,10 @@
 <section class="screen dark refs-band" id="opinie" aria-labelledby="op-h">
   <div class="wrap refs-in">
     <div class="refs-copy rv">
-      <h2 id="op-h">Mamy to <em>na piśmie</em></h2>
+      <h2 id="op-h">Listy <em>referencyjne</em></h2>
+      <p class="refs-lede">Wykonawcy i instytucje, dla których pracowaliśmy, opisali nasze roboty w listach referencyjnych. Każdy list można przeczytać w całości.</p>
       <p class="big"><span data-count="{{ referencje|length }}">{{ referencje|length }}</span></p>
-      <p class="big-l">listów referencyjnych od wykonawców, inwestorów i instytucji</p>
+      <p class="big-l">listów od wykonawców, inwestorów i instytucji</p>
       <a class="btn btn-volt" href="referencje.html">Przeczytaj listy{{ ico('arrow') }}</a>
     </div>
     <div class="sheets">
@@ -116,8 +117,8 @@
       <article class="sheet rv" style="--d:{{ loop.index0 * 0.08 }}s">
         <p class="sheet-h"><span>List referencyjny</span><span>{{ l.rok }}</span></p>
         <h3>{{ l.firma }}</h3>
-        {% if l.cytat %}<blockquote>„…{{ l.cytat }}”</blockquote>{% else %}<p>{{ l.zakres }}</p>{% endif %}
-        <span class="stamp" aria-hidden="true">{{ ico('check') }}</span>
+        <p class="sheet-z"><b>Zakres robót</b>{{ l.zakres }}</p>
+        {% if l.cytat %}<blockquote>„…{{ l.cytat }}”</blockquote>{% endif %}
       </article>
       {% endif %}{% endfor %}
     </div>
@@ -131,7 +132,7 @@
       <img class="firm-inset" src="img/v2/firma-dlonie-s.webp" width="720" height="964" alt="" loading="lazy" decoding="async">
     </div>
     <div class="firm-copy rv" style="--d:.1s">
-      <h2 id="fi-h">Dwa pokolenia, <em>jeden zakład</em></h2>
+      <h2 id="fi-h">Firma <em>rodzinna</em></h2>
       <p class="lede">Zakład założył w 1978 roku Mirosław Kumala. W 1999 roku dołączył syn, Wojciech, który dziś prowadzi firmę.</p>
       <p>Dzwoniąc do nas, rozmawiasz z właścicielami. Sami wyceniamy robotę i odpowiadamy za nią własnym nazwiskiem.</p>
       <ol class="rail">

@@ -46,8 +46,18 @@
   /* schemat „jak działamy”: prąd płynie przez węzły raz */
   var circ = d.getElementById('circuit');
   if (circ) {
-    if (!('IntersectionObserver' in w) || reduce) circ.classList.add('lit');
-    else { var co = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { circ.classList.add('lit'); co.disconnect(); } }, { threshold: 0.35 }); co.observe(circ); }
+    var wrap = circ.parentNode, nodes = circ.querySelectorAll('.node');
+    /* jeden ciągły przewód od pierwszego do ostatniego węzła; prąd płynie ze stałą prędkością, węzły zapalają się w chwili dojścia */
+    function wire() {
+      var r = wrap.getBoundingClientRect(), a = nodes[0].getBoundingClientRect(), z = nodes[nodes.length - 1].getBoundingClientRect();
+      var half = parseFloat(getComputedStyle(d.documentElement).fontSize) / 2, x1 = a.left + half - r.left, x2 = z.left + half - r.left;
+      wrap.style.setProperty('--wl', x1 + 'px'); wrap.style.setProperty('--ww', Math.max(0, x2 - x1) + 'px');
+      wrap.style.setProperty('--wt', (a.top + a.height / 2 - r.top) + 'px');
+    }
+    wire(); w.addEventListener('resize', wire); if (d.fonts) d.fonts.ready.then(wire); w.addEventListener('load', wire);
+    function lit() { wire(); circ.classList.add('lit'); wrap.classList.add('lit'); }
+    if (!('IntersectionObserver' in w) || reduce) lit();
+    else { var co = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { lit(); co.disconnect(); } }, { threshold: 0.35 }); co.observe(circ); }
   }
 
   /* liczniki */
