@@ -1,0 +1,40 @@
+<section class="screen dark contact-band" id="kontakt" aria-labelledby="ko-h">
+  <div class="wrap contact">
+    <div class="contact-copy rv">
+      <h2 id="ko-h">Powiedz, co trzeba <em>podłączyć</em></h2>
+      <p>Oddzwonimy z pytaniami i ceną. Wystarczy e-mail albo telefon.</p>
+      <a class="bigtel" href="tel:+48501739926">501 739 926</a>
+      <dl class="lines">
+        <div><dt>Wyceny</dt><dd><a href="tel:+48501148733">501 148 733</a><small>Mirosław Kumala · <a href="mailto:mkumala@wp.pl">mkumala@wp.pl</a></small></dd></div>
+        <div><dt>Biuro</dt><dd><a href="mailto:biuro@qmala.pl">biuro@qmala.pl</a></dd></div>
+        <div><dt>Praca</dt><dd><a href="{{ 'praca.html' if praca.widoczna else 'mailto:praca@qmala.pl' }}">praca@qmala.pl</a></dd></div>
+        <div><dt>Siedziba</dt><dd>ul. Andrzeja Cinciały 10/5<small>50-306 Wrocław</small></dd></div>
+      </dl>
+    </div>
+
+    <form class="form rv" style="--d:.1s" id="wycena" name="wycena" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-mail="biuro@qmala.pl" novalidate aria-labelledby="f-h">
+      <input type="hidden" name="form-name" value="wycena">
+      <div class="form-body">
+        <h3 id="f-h">Poproś o wycenę</h3>
+        <div class="field"><label for="f-temat">Czego dotyczy?</label>
+          <select id="f-temat" name="temat"><option>Instalacja elektryczna</option><option>Awaria</option><option>Inteligentny dom i automatyka</option><option>Rozdzielnica</option><option>Oświetlenie</option><option>Projekt, pomiary, przegląd, odgromy</option><option>Sieć, antena, domofon, monitoring</option><option>Coś innego</option></select></div>
+        <div class="field"><label for="f-opis">Co trzeba zrobić?</label><textarea id="f-opis" name="opis" rows="3" placeholder="Np. nowa instalacja w domu 140 m², stan surowy, Wrocław"></textarea></div>
+        <div class="two">
+          <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="nazwa@domena.pl" aria-describedby="f-err"></div>
+          <div class="field"><label for="f-tel">albo telefon</label><input id="f-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel" placeholder="600 000 000" aria-describedby="f-err"></div>
+        </div>
+        <p class="err" id="f-err" role="alert" hidden></p>
+        <p class="bot" aria-hidden="true"><label>Nie wypełniaj: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <button class="btn btn-volt btn-full" type="submit" id="f-send">Wyślij zapytanie{{ ico('arrow') }}</button>
+        <p class="note">Wysyłamy od razu, bez otwierania poczty. Dane wykorzystamy tylko do odpowiedzi.</p>
+      </div>
+      <div class="form-done" id="f-done" tabindex="-1" hidden>
+        <span class="done-led" aria-hidden="true">{{ ico('check') }}</span>
+        <h3>Zapytanie <em>wysłane</em></h3>
+        <p id="f-done-p"></p>
+        <p>Pilna sprawa? <a href="tel:+48501739926">Zadzwoń: 501 739 926</a></p>
+        <button class="btn btn-line" type="button" id="f-again">Wyślij kolejne zapytanie</button>
+      </div>
+    </form>
+  </div>
+</section>

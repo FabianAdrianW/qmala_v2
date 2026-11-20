@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% from "_m.html" import phead %}
+{% set title = "O firmie: rodzinny zakład od 1978 | Qmala Wrocław" %}
+{% set description = "Zakład Elektro-Instalacyjny Wojciech Kumala: rodzinna firma z Wrocławia od 1978 roku. Kim jesteśmy, dla kogo pracujemy, jak działamy i dane firmy." %}
+{% block main %}
+{% call phead("O firmie", "Rodzinny zakład <em>od 1978 roku</em>", "Pracujemy we Wrocławiu od ponad czterdziestu lat, dziś w drugim pokoleniu.", "firma-warsztat") %}
+<nav class="jump rv" style="--d:.45s" aria-label="Na tej stronie"><a href="#kim">Kim jesteśmy</a><a href="#dla-kogo">Dla kogo</a><a href="#jak">Jak działamy</a><a href="#dane">Dane firmy</a></nav>
+{% endcall %}
+
+<section class="screen" id="kim" aria-labelledby="kim-h">
+  <div class="firm">
+    <div class="firm-pic rv" aria-hidden="true">
+      <img src="img/v2/firma-dlonie.webp" width="896" height="1200" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="firm-copy rv" style="--d:.1s">
+      <h2 id="kim-h">Kim <em>jesteśmy</em></h2>
+      <p class="lede">Zakład założył w 1978 roku Mirosław Kumala. W 1999 roku dołączył do niego syn, Wojciech, który dziś prowadzi firmę.</p>
+      <p>Dzwoniąc do nas, rozmawiasz z właścicielami: z ludźmi, którzy sami wyceniają robotę i odpowiadają za nią własnym nazwiskiem. Wyceny do dziś przygotowuje Mirosław Kumala.</p>
+      <p>Mamy uprawnienia i wieloletnią praktykę, a nasi pracownicy wymagane kwalifikacje. Instalacje wykonujemy zgodnie z normami i trzymamy się terminów.</p>
+      <ol class="rail">
+        <li><b>1978</b><span>Mirosław Kumala zakłada zakład we Wrocławiu</span></li>
+        <li><b>1999</b><span>Dołącza syn, Wojciech Kumala</span></li>
+        <li><b>2011–2015</b><span>Politechnika, Muzeum Narodowe, centrum EIT+</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="screen grid-paper" id="dla-kogo" aria-labelledby="dk-h">
+  <div class="wrap">
+    <div class="head head-split rv">
+      <h2 id="dk-h">Dla kogo <em>pracujemy</em></h2>
+      <p>Trzy grupy klientów, z którymi spotykamy się najczęściej.</p>
+    </div>
+    <div class="trio">
+      <article class="card rv"><div class="card-pic"><img src="img/v2/panel-dom-s.webp" width="720" height="402" alt="" loading="lazy" decoding="async"></div><div class="card-tx"><h3>Inwestorzy prywatni</h3><p>Domy, mieszkania i lokale usługowe. Nowa instalacja, modernizacja starej albo inteligentny budynek w systemie LCN, jak w przychodni stomatologicznej przy ul. Rysia.</p></div></article>
+      <article class="card rv" style="--d:.08s"><div class="card-pic"><img src="img/v2/krok-wykonanie-s.webp" width="720" height="538" alt="" loading="lazy" decoding="async"></div><div class="card-tx"><h3>Wykonawcy i deweloperzy</h3><p>Na budowie odpowiadamy za branżę elektryczną. Robiliśmy osiedla przy ul. Potokowej i Koreańskiej. Referencje wystawili nam m.in. EURA Budownictwo, HARAS i KOMET P.P.H.</p></div></article>
+      <article class="card rv" style="--d:.16s"><div class="card-pic"><img src="img/v2/panel-firmy-s.webp" width="720" height="402" alt="" loading="lazy" decoding="async"></div><div class="card-tx"><h3>Instytucje i zabytki</h3><p>Uczelnie, szkoły, muzeum i klasztor. Pracowaliśmy w budynkach Politechniki Wrocławskiej, w galerii malarstwa Muzeum Narodowego i w zabytkowym klasztorze przy ul. św. Jadwigi.</p></div></article>
+    </div>
+  </div>
+</section>
+
+{% include "_jak.html" %}
+
+<section class="sec" id="dane" aria-labelledby="dane-h">
+  <div class="wrap data-wrap">
+    <div class="head rv">
+      <h2 id="dane-h">Dane <em>firmy</em></h2>
+      <p>Do umowy, zamówienia i faktury.</p>
+    </div>
+    <dl class="plate plate-light rv" style="--d:.1s">
+      <div class="wide"><dt>Pełna nazwa</dt><dd>{{ site.nazwa }}</dd></div>
+      <div><dt>NIP</dt><dd>{{ site.nip }} <button class="copy" type="button" data-copy="{{ site.nip|replace('-', '') }}">Kopiuj</button></dd></div>
+      <div><dt>REGON</dt><dd>{{ site.regon }}</dd></div>
+      <div><dt>Siedziba i korespondencja</dt><dd>{{ site.siedziba_ulica }}, {{ site.siedziba_miasto }}</dd></div>
+      <div><dt>Biuro</dt><dd><a href="mailto:{{ site.email_biuro }}">{{ site.email_biuro }}</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+{% include "_kontakt.html" %}
+{% endblock %}

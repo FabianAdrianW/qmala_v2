@@ -1,0 +1,317 @@
+{
+ "realizacje": [
+  {
+   "slug": "2015-1-eit",
+   "title": "Dolnośląskie Centrum Badań EIT+",
+   "rok": "2015",
+   "opis": "Budowa centrum badawczego we Wrocławiu.",
+   "wyrozniona": true,
+   "zdjecia": [
+    "img/realizacje/eit-plus.webp",
+    "https://qmala.pl/images/74.jpg",
+    "https://qmala.pl/images/75.jpg",
+    "https://qmala.pl/images/76.jpg",
+    "https://qmala.pl/images/77.jpg",
+    "https://qmala.pl/images/78.jpg",
+    "https://qmala.pl/images/79.jpg",
+    "https://qmala.pl/images/80.jpg",
+    "https://qmala.pl/images/81.jpg",
+    "https://qmala.pl/images/82.jpg",
+    "https://qmala.pl/images/83.jpg"
+   ]
+  },
+  {
+   "slug": "2015-2-politechnika-c15",
+   "title": "Politechnika Wrocławska, budynek C-15",
+   "rok": "2015",
+   "opis": "Zaplecze badawcze Politechniki Wrocławskiej.",
+   "wyrozniona": true,
+   "zdjecia": [
+    "img/realizacje/politechnika-c15.webp",
+    "https://qmala.pl/images/85.jpg",
+    "https://qmala.pl/images/86.jpg",
+    "https://qmala.pl/images/87.jpg",
+    "https://qmala.pl/images/88.jpg",
+    "https://qmala.pl/images/89.jpg",
+    "https://qmala.pl/images/90.jpg",
+    "https://qmala.pl/images/91.jpg",
+    "https://qmala.pl/images/92.jpg",
+    "https://qmala.pl/images/93.jpg",
+    "https://qmala.pl/images/94.jpg",
+    "https://qmala.pl/images/95.jpg",
+    "https://qmala.pl/images/96.jpg",
+    "https://qmala.pl/images/97.jpg"
+   ]
+  },
+  {
+   "slug": "2014-1-siedlec",
+   "title": "Ośrodek Terapeutyczny w Siedlcu Trzebnickim",
+   "rok": "2014",
+   "opis": "",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/63.jpg",
+    "https://qmala.pl/images/64.jpg",
+    "https://qmala.pl/images/65.jpg",
+    "https://qmala.pl/images/66.jpg",
+    "https://qmala.pl/images/67.jpg",
+    "https://qmala.pl/images/68.jpg"
+   ]
+  },
+  {
+   "slug": "2014-2-bykow",
+   "title": "Zakład lakierniczy w Bykowie",
+   "rok": "2014",
+   "opis": "",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/69.jpg",
+    "https://qmala.pl/images/70.jpg",
+    "https://qmala.pl/images/71.jpg",
+    "https://qmala.pl/images/72.jpg",
+    "https://qmala.pl/images/73.jpg"
+   ]
+  },
+  {
+   "slug": "2013-1-ogrody-grabiszynskie",
+   "title": "Ogrody Grabiszyńskie",
+   "rok": "2013",
+   "opis": "Wrocław.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/55.jpg",
+    "https://qmala.pl/images/51.jpg",
+    "https://qmala.pl/images/54.jpg",
+    "https://qmala.pl/images/53.jpg",
+    "https://qmala.pl/images/52.jpg",
+    "https://qmala.pl/images/50.jpg"
+   ]
+  },
+  {
+   "slug": "2013-2-muzeum-narodowe",
+   "title": "Muzeum Narodowe we Wrocławiu",
+   "rok": "2013",
+   "opis": "Galeria malarstwa.",
+   "wyrozniona": true,
+   "zdjecia": [
+    "img/realizacje/muzeum-narodowe.webp",
+    "https://qmala.pl/images/39.jpg",
+    "https://qmala.pl/images/40.jpg",
+    "https://qmala.pl/images/41.jpg",
+    "https://qmala.pl/images/42.jpg"
+   ]
+  },
+  {
+   "slug": "2013-3-klasztor",
+   "title": "Klasztor Sióstr Salezjanek",
+   "rok": "2013",
+   "opis": "Wrocław.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/34.jpg",
+    "https://qmala.pl/images/35.jpg",
+    "https://qmala.pl/images/36.jpg",
+    "https://qmala.pl/images/37.jpg",
+    "https://qmala.pl/images/38.jpg"
+   ]
+  },
+  {
+   "slug": "2013-4-lo7",
+   "title": "Liceum Ogólnokształcące nr 7",
+   "rok": "2013",
+   "opis": "Remont elewacji, ul. Krucza we Wrocławiu.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/22.jpg",
+    "https://qmala.pl/images/23.jpg",
+    "https://qmala.pl/images/24.jpg"
+   ]
+  },
+  {
+   "slug": "2012-1-potokowa",
+   "title": "Osiedle przy ul. Potokowej",
+   "rok": "2012",
+   "opis": "Zespół budynków jedno- i wielorodzinnych z garażami podziemnymi i infrastrukturą zewnętrzną, Wrocław.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/25.jpg",
+    "https://qmala.pl/images/26.jpg",
+    "https://qmala.pl/images/27.jpg",
+    "https://qmala.pl/images/28.jpg",
+    "https://qmala.pl/images/29.jpg",
+    "https://qmala.pl/images/30.jpg",
+    "https://qmala.pl/images/31.jpg",
+    "https://qmala.pl/images/32.jpg",
+    "https://qmala.pl/images/33.jpg"
+   ]
+  },
+  {
+   "slug": "2012-2-politechnika-e1",
+   "title": "Politechnika Wrocławska, budynek E-1",
+   "rok": "2012",
+   "opis": "Gmach Wydziału Architektury, iluminacja elewacji.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/1.jpg",
+    "https://qmala.pl/images/2.jpg"
+   ]
+  },
+  {
+   "slug": "2012-3-gimnazjum-15",
+   "title": "Gimnazjum nr 15 we Wrocławiu",
+   "rok": "2012",
+   "opis": "Modernizacja budynku z zagospodarowaniem terenu.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/8.jpg",
+    "https://qmala.pl/images/9.jpg",
+    "https://qmala.pl/images/10.jpg"
+   ]
+  },
+  {
+   "slug": "2012-4-lo1",
+   "title": "Liceum Ogólnokształcące nr 1",
+   "rok": "2012",
+   "opis": "Modernizacja budynków przy ul. Poniatowskiego 9 we Wrocławiu.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/11.jpg",
+    "https://qmala.pl/images/12.jpg",
+    "https://qmala.pl/images/13.jpg",
+    "https://qmala.pl/images/14.jpg",
+    "https://qmala.pl/images/15.jpg"
+   ]
+  },
+  {
+   "slug": "2012-5-hirszfeld",
+   "title": "Instytut Immunologii i Terapii Doświadczalnej im. L. Hirszfelda",
+   "rok": "2012",
+   "opis": "Remont instalacji odgromowej i iluminacja elewacji.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/16.jpg"
+   ]
+  },
+  {
+   "slug": "2011-1-sp73",
+   "title": "Szkoła Podstawowa nr 73",
+   "rok": "2011",
+   "opis": "Przebudowa i rozbudowa bloku sportowego, ul. Gliniana 28-30 we Wrocławiu.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/59.jpg",
+    "https://qmala.pl/images/60.jpg",
+    "https://qmala.pl/images/61.jpg",
+    "https://qmala.pl/images/62.jpg"
+   ]
+  },
+  {
+   "slug": "2011-2-rysia",
+   "title": "Przychodnia stomatologiczna, ul. Rysia",
+   "rok": "2011",
+   "opis": "Inteligentna instalacja LCN, Wrocław.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/17.jpg",
+    "https://qmala.pl/images/18.jpg",
+    "https://qmala.pl/images/19.jpg",
+    "https://qmala.pl/images/20.jpg",
+    "https://qmala.pl/images/21.jpg"
+   ]
+  },
+  {
+   "slug": "2011-3-koreanska",
+   "title": "Trzy budynki wielorodzinne, ul. Koreańska",
+   "rok": "2011",
+   "opis": "Budowa z infrastrukturą techniczną i zagospodarowaniem terenu, Wrocław.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/3.jpg",
+    "https://qmala.pl/images/4.jpg",
+    "https://qmala.pl/images/5.jpg",
+    "https://qmala.pl/images/6.jpg",
+    "https://qmala.pl/images/7.jpg"
+   ]
+  },
+  {
+   "slug": "stale-barton",
+   "title": "Dom Lodów Barton",
+   "rok": "Stale",
+   "opis": "Stała obsługa.",
+   "wyrozniona": false,
+   "zdjecia": [
+    "https://qmala.pl/images/56.jpg",
+    "https://qmala.pl/images/57.jpg",
+    "https://qmala.pl/images/58.jpg"
+   ]
+  }
+ ],
+ "referencje": [
+  {
+   "plik": "Referencje8",
+   "firma": "Zgromadzenie Córek Maryi Wspomożycielki",
+   "rok": "2014",
+   "zakres": "Roboty elektryczne i teletechniczne w zabytkowym budynku klasztornym przy ul. św. Jadwigi 11 we Wrocławiu.",
+   "cytat": "wykonany rzetelnie, z dużą starannością"
+  },
+  {
+   "plik": "Referencje7",
+   "firma": "ANPA Techniki Oświetleniowe",
+   "rok": "2012",
+   "zakres": "Roboty elektryczne i teletechniczne w Muzeum Narodowym we Wrocławiu.",
+   "cytat": "solidną, wiarygodną, w pełni przygotowaną do kompleksowego wykonania robót instalacyjnych"
+  },
+  {
+   "plik": "Referencje5",
+   "firma": "HARAS",
+   "rok": "2012"
+  },
+  {
+   "plik": "Referencje6",
+   "firma": "KOMET P.P.H.",
+   "rok": "2011"
+  },
+  {
+   "plik": "Referencje3",
+   "firma": "EL-PARTNER",
+   "rok": "2011–2012",
+   "zakres": "Instalacje elektryczne w budynku na potrzeby Powiatowego Urzędu Pracy."
+  },
+  {
+   "plik": "Referencje1",
+   "firma": "EURA Budownictwo",
+   "rok": "2011",
+   "zakres": "Zaplecze badawcze Politechniki Wrocławskiej i Zakład Opiekuńczo-Leczniczy dla Dzieci w Wierzbicach."
+  },
+  {
+   "plik": "Referencje4",
+   "firma": "EURA Budownictwo",
+   "rok": "2011",
+   "zakres": "Instalacje przeciwpożarowe w Zakładzie Opiekuńczo-Leczniczym dla Dzieci w Wierzbicach."
+  }
+ ],
+ "site": {
+  "nazwa": "Zakład Elektro-Instalacyjny Wojciech Kumala",
+  "telefon": "501 739 926",
+  "telefon_wyceny": "501 148 733",
+  "osoba_wyceny": "Mirosław Kumala",
+  "email_wyceny": "mkumala@wp.pl",
+  "email_biuro": "biuro@qmala.pl",
+  "email_praca": "praca@qmala.pl",
+  "nip": "898-153-71-22",
+  "regon": "932068657",
+  "siedziba_ulica": "ul. Andrzeja Cinciały 10/5",
+  "siedziba_miasto": "50-306 Wrocław",
+  "korespondencja_ulica": "ul. Andrzeja Cinciały 10/5",
+  "korespondencja_miasto": "50-306 Wrocław",
+  "facebook": "",
+  "instagram": ""
+ },
+ "praca": {
+  "widoczna": true,
+  "wstep": "Szukamy ludzi do pracy przy instalacjach elektrycznych we Wrocławiu i okolicach.",
+  "ogloszenia": [],
+  "brak_ogloszen": "Nie prowadzimy teraz naboru na konkretne stanowisko. Jeśli chcesz u nas pracować, wyślij CV. Odezwiemy się, gdy pojawi się miejsce.",
+  "klauzula": "Wysyłając CV, zgadzasz się na przetwarzanie danych osobowych na potrzeby rekrutacji."
+ }
+}

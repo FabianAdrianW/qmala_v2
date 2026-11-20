@@ -1,0 +1,12 @@
+{% macro phead(label, h1, lede, img=None) %}
+<section class="phead dark" aria-labelledby="ph-h">
+  {% if img %}<div class="phead-pic" aria-hidden="true"><img src="img/v2/{{ img }}.webp" width="1376" height="768" alt="" fetchpriority="high"></div>{% endif %}
+  <div class="wrap phead-in">
+    <nav class="crumbs rv" aria-label="Ścieżka"><a href="index.html">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">{{ label }}</span></nav>
+    <h1 id="ph-h"><span class="ln"><span>{{ h1|safe }}</span></span></h1>
+    <p class="lede rv" style="--d:.3s">{{ lede|safe }}</p>
+    {{ caller() if caller }}
+  </div>
+  <svg class="hero-wire" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5H1000"/><path class="pulse" pathLength="100" d="M0 5H1000"/></svg>
+</section>
+{% endmacro %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% from "_m.html" import phead %}
+{% set title = "Realizacje: Politechnika, Muzeum, EIT+ | Qmala Wrocław" %}
+{% set description = "Zdjęcia z realizacji Zakładu Elektro-Instalacyjnego Wojciech Kumala: Politechnika Wrocławska, Muzeum Narodowe, EIT+, szkoły, osiedla i zakłady we Wrocławiu." %}
+{% set ns = namespace(n=0, years=[]) %}
+{% for r in realizacje %}{% set ns.n = ns.n + r.zdjecia|length %}{% if r.rok not in ns.years %}{% set _ = ns.years.append(r.rok) %}{% endif %}{% endfor %}
+{% block main %}
+{% call phead("Realizacje", "Rejestr <em>obiektów</em>", "Obiekty: " ~ realizacje|length ~ ", zdjęcia: " ~ ns.n ~ ". Kliknij zdjęcie, żeby je powiększyć.", "uslugi-oswietlenie") %}
+<nav class="jump rv" style="--d:.45s" aria-label="Rok realizacji">
+  {% for y in ns.years %}<a href="#r{{ y }}">{{ y }}</a>{% endfor %}
+</nav>
+{% endcall %}
+
+<section class="sec grid-paper" aria-label="Lista realizacji">
+  <div class="wrap works">
+    {% set yrs = namespace(seen=[]) %}
+    {% for r in realizacje %}
+    <article class="work rv" id="{{ r.slug }}">
+      {% if r.rok not in yrs.seen %}<span class="anchor" id="r{{ r.rok }}"></span>{% set _ = yrs.seen.append(r.rok) %}{% endif %}
+      <header class="work-h">
+        <span class="work-yr">{{ r.rok }}</span>
+        <h2>{{ r.title }}</h2>
+        {% if r.opis %}<p>{{ r.opis }}</p>{% endif %}
+        <span class="work-n">{{ r.zdjecia|length }} zdj.</span>
+      </header>
+      <div class="shots">
+        {% for z in r.zdjecia %}
+        <button class="shot" type="button" data-set="{{ r.slug }}" data-full="{{ z }}" data-cap="{{ r.title }}" aria-label="Powiększ zdjęcie {{ loop.index }} z {{ r.zdjecia|length }}: {{ r.title }}"><img src="{{ z }}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="640" height="480"></button>
+        {% endfor %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "_kontakt.html" %}
+{% endblock %}

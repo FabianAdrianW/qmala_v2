@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% from "_m.html" import phead %}
+{% set title = "Praca dla elektryka we Wrocławiu | Qmala" %}
+{% set description = "Praca przy instalacjach elektrycznych we Wrocławiu i okolicach. Wyślij CV do Zakładu Elektro-Instalacyjnego Wojciech Kumala bez rejestracji." %}
+{% block main %}
+{% call phead("Praca", "Szukamy <em>elektryków</em>", praca.wstep, "firma-warsztat") %}{% endcall %}
+
+<section class="sec grid-paper" aria-labelledby="cv-h">
+  <div class="wrap cv-wrap">
+    <div class="cv-copy rv">
+      {% for o in praca.ogloszenia %}
+      <article class="job"><h2>{{ o.stanowisko }}</h2>{% if o.opis %}<p>{{ o.opis }}</p>{% endif %}</article>
+      {% else %}
+      <p class="lede">{{ praca.brak_ogloszen }}</p>
+      {% endfor %}
+      <p>Wolisz mailem? Napisz na <a href="mailto:praca@qmala.pl?subject=CV">praca@qmala.pl</a>.</p>
+    </div>
+    <form class="form rv" style="--d:.1s" id="cv" name="cv" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" data-mail="praca@qmala.pl" novalidate aria-labelledby="cv-h">
+      <input type="hidden" name="form-name" value="cv">
+      <div class="form-body">
+        <h2 id="cv-h" class="form-h">Wrzuć swoje CV</h2>
+        <label class="drop" for="cv-file">
+          <input type="file" id="cv-file" name="cv" accept=".pdf,.doc,.docx,.odt" aria-describedby="cv-err">
+          {{ ico('up') }}
+          <span class="drop-t" id="cv-name">Wybierz plik albo upuść go tutaj</span>
+          <span class="drop-s">PDF, DOC, DOCX lub ODT</span>
+        </label>
+        <div class="two">
+          <div class="field"><label for="cv-imie">Imię</label><input id="cv-imie" name="imie" autocomplete="given-name"></div>
+          <div class="field"><label for="cv-tel">Telefon</label><input id="cv-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel"></div>
+        </div>
+        <p class="err" id="cv-err" role="alert" hidden></p>
+        <p class="bot" aria-hidden="true"><label>Nie wypełniaj: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <button class="btn btn-volt btn-full" type="submit" id="cv-send">Wyślij CV{{ ico('arrow') }}</button>
+        <p class="note">{{ praca.klauzula }}</p>
+      </div>
+      <div class="form-done" id="cv-done" tabindex="-1" hidden>
+        <span class="done-led" aria-hidden="true">{{ ico('check') }}</span>
+        <h3>CV <em>wysłane</em></h3>
+        <p>Dziękujemy. Odezwiemy się, gdy pojawi się miejsce.</p>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% set title = "Instalacje elektryczne Wrocław, od 1978 | Qmala" %}
+{% set description = "Rodzinny zakład elektroinstalacyjny z Wrocławia. Instalacje, rozdzielnice, automatyka LCN, oświetlenie, pomiary i projekty. Od 1978 roku, dla domów i instytucji." %}
+{% block preload %}<link rel="preload" as="image" href="img/v2/hero.webp" imagesrcset="img/v2/hero-s.webp 720w, img/v2/hero.webp 1376w" imagesizes="(min-width: 820px) 55vw, 100vw">{% endblock %}
+{% block main %}
+
+<section class="screen hero" aria-labelledby="h1">
+  <div class="hero-media" aria-hidden="true">
+    <img class="hero-img" src="img/v2/hero.webp" srcset="img/v2/hero-s.webp 720w, img/v2/hero.webp 1376w" sizes="(min-width: 820px) 55vw, 100vw" width="1376" height="768" alt="" fetchpriority="high">
+    <video class="hero-vid" muted playsinline preload="none" data-src="img/v2/hero.mp4"></video>
+  </div>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kicker rv">Zakład Elektro-Instalacyjny · Wrocław</p>
+      <h1 id="h1"><span class="ln"><span>Instalacje elektryczne</span></span> <span class="ln"><span>we Wrocławiu</span></span> <span class="ln"><em>od 1978 roku</em></span></h1>
+      <p class="lede rv" style="--d:.4s">Rodzinny zakład, dziś w drugim pokoleniu. Projektujemy, montujemy i mierzymy instalacje w domach, biurach, szkołach i na uczelniach.</p>
+      <div class="actions rv" style="--d:.55s">
+        <a class="btn btn-volt" href="#kontakt">Poproś o wycenę{{ ico('arrow') }}</a>
+        <a class="btn btn-line" href="tel:+48501739926">{{ ico('phone') }}501 739 926</a>
+      </div>
+    </div>
+    <dl class="plate rv" style="--d:.7s" aria-label="Najważniejsze dane firmy">
+      <div><dt>Rok założenia</dt><dd>1978</dd></div>
+      <div><dt>Pokolenia</dt><dd>2</dd></div>
+      <div><dt>Obiekty na liście</dt><dd>{{ realizacje|length }}</dd></div>
+      <div><dt>Zasięg</dt><dd>Wrocław · PL</dd></div>
+    </dl>
+  </div>
+  <svg class="hero-wire" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5H1000"/><path class="pulse" pathLength="100" d="M0 5H1000"/></svg>
+</section>
+
+<section class="screen grid-paper" id="oferta" aria-labelledby="of-h">
+  <div class="wrap">
+    <div class="head head-split rv">
+      <h2 id="of-h">Sześć obwodów, <em>jedna ekipa</em></h2>
+      <p>Nie szukasz osobno projektanta, montera i pomiarowca. Wybierz obwód i zobacz, co w nim robimy.</p>
+    </div>
+    <div class="switch rv">
+      <div class="board" role="tablist" aria-label="Obszary oferty">
+        {% for g in oferta %}
+        <button class="mod" type="button" role="tab" id="tab-{{ g.id }}" aria-controls="pan-{{ g.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}">
+          <span class="mod-q">{{ g.q }}</span>
+          <span class="lever" aria-hidden="true"><i></i></span>
+          <span class="mod-l">{{ g.krotko }}</span>
+          <span class="led" aria-hidden="true"></span>
+        </button>
+        {% endfor %}
+        <p class="board-rail" aria-hidden="true">QMALA · 230/400 V</p>
+      </div>
+      <div class="pans">
+        {% for g in oferta %}
+        <article class="pan{{ ' on' if loop.first }}" role="tabpanel" id="pan-{{ g.id }}" aria-labelledby="tab-{{ g.id }}">
+          <div class="pan-pic"><img src="img/v2/{{ g.img }}-s.webp" srcset="img/v2/{{ g.img }}-s.webp 720w, img/v2/{{ g.img }}.webp 1024w" sizes="(min-width: 820px) 28vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="pan-tx">
+            <span class="pan-q">Obwód {{ g.q }}</span>
+            <h3>{{ g.nazwa }}</h3>
+            <p>{{ g.opis }}</p>
+            <ul class="checks">{% for u in g.uslugi %}<li>{{ ico('check') }}{{ u }}</li>{% endfor %}</ul>
+            <div class="pan-act">
+              <a class="btn btn-dark" href="#kontakt" data-topic="{{ g.temat }}">Zapytaj o wycenę{{ ico('arrow') }}</a>
+              <a class="link" href="oferta.html#{{ g.id }}">Szczegóły</a>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "_jak.html" %}
+
+{% set feat = realizacje|selectattr('wyrozniona')|list %}
+{% set rest = realizacje|rejectattr('wyrozniona')|list %}
+<section class="screen" id="realizacje" aria-labelledby="re-h">
+  <div class="wrap">
+    <div class="head head-split rv">
+      <h2 id="re-h">Rejestr <em>obiektów</em></h2>
+      <p>Uczelnie, muzeum, szkoły, osiedla i zakłady. Zdjęcia w tej sekcji pokazują prawdziwe realizacje.</p>
+    </div>
+    <div class="reg">
+      <div class="viewer rv" id="viewer">
+        {% for r in feat %}
+        <figure class="v-slide{{ ' on' if loop.first }}" id="v-{{ loop.index0 }}">
+          <img src="{{ r.zdjecia[0] }}" width="788" height="506" alt="{{ r.title }}" loading="lazy" decoding="async">
+          <figcaption><span>{{ r.rok }}</span><b>{{ r.title }}</b>{{ r.opis }}</figcaption>
+        </figure>
+        {% endfor %}
+        <div class="v-tabs" role="group" aria-label="Wyróżnione realizacje">
+          {% for r in feat %}<button type="button" data-v="{{ loop.index0 }}" aria-pressed="{{ 'true' if loop.first else 'false' }}"><span>{{ r.rok }}</span>{{ r.title.split(',')[0] }}</button>{% endfor %}
+        </div>
+      </div>
+      <div class="ledger rv" style="--d:.1s">
+        <table>
+          <caption class="sr">Pozostałe realizacje</caption>
+          <thead><tr><th scope="col">Rok</th><th scope="col">Obiekt</th></tr></thead>
+          <tbody>
+          {% for r in rest %}
+            <tr><td>{{ r.rok }}</td><td><a href="realizacje.html#{{ r.slug }}">{{ r.title }}</a></td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        <a class="btn btn-dark" href="realizacje.html">Zobacz zdjęcia z obiektów{{ ico('arrow') }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="screen dark refs-band" id="opinie" aria-labelledby="op-h">
+  <div class="wrap refs-in">
+    <div class="refs-copy rv">
+      <h2 id="op-h">Mamy to <em>na piśmie</em></h2>
+      <p class="big"><span data-count="{{ referencje|length }}">{{ referencje|length }}</span></p>
+      <p class="big-l">listów referencyjnych od wykonawców, inwestorów i instytucji</p>
+      <a class="btn btn-volt" href="referencje.html">Przeczytaj listy{{ ico('arrow') }}</a>
+    </div>
+    <div class="sheets">
+      {% for l in referencje if l.zakres %}{% if loop.index <= 4 %}
+      <article class="sheet rv" style="--d:{{ loop.index0 * 0.08 }}s">
+        <p class="sheet-h"><span>List referencyjny</span><span>{{ l.rok }}</span></p>
+        <h3>{{ l.firma }}</h3>
+        {% if l.cytat %}<blockquote>„…{{ l.cytat }}”</blockquote>{% else %}<p>{{ l.zakres }}</p>{% endif %}
+        <span class="stamp" aria-hidden="true">{{ ico('check') }}</span>
+      </article>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="firma" aria-labelledby="fi-h">
+  <div class="firm">
+    <div class="firm-pic rv" aria-hidden="true">
+      <img src="img/v2/firma-przelaczniki.webp" width="1024" height="1024" alt="" loading="lazy" decoding="async">
+      <img class="firm-inset" src="img/v2/firma-dlonie-s.webp" width="720" height="964" alt="" loading="lazy" decoding="async">
+    </div>
+    <div class="firm-copy rv" style="--d:.1s">
+      <h2 id="fi-h">Dwa pokolenia, <em>jeden zakład</em></h2>
+      <p class="lede">Zakład założył w 1978 roku Mirosław Kumala. W 1999 roku dołączył syn, Wojciech, który dziś prowadzi firmę.</p>
+      <p>Dzwoniąc do nas, rozmawiasz z właścicielami. Sami wyceniamy robotę i odpowiadamy za nią własnym nazwiskiem.</p>
+      <ol class="rail">
+        <li><b>1978</b><span>Mirosław Kumala zakłada zakład we Wrocławiu</span></li>
+        <li><b>1999</b><span>Dołącza syn, Wojciech Kumala</span></li>
+        <li><b>2011–2015</b><span>Politechnika, Muzeum Narodowe, centrum EIT+</span></li>
+      </ol>
+      <a class="link" href="o-firmie.html">Poznaj firmę{{ ico('arrow') }}</a>
+    </div>
+  </div>
+</section>
+
+{% include "_kontakt.html" %}
+{% endblock %}

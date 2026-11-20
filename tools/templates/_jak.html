@@ -1,0 +1,19 @@
+<section class="screen dark" id="jak" aria-labelledby="jak-h">
+  <div class="wrap">
+    <div class="head head-split rv">
+      <h2 id="jak-h">Od telefonu <em>do protokołu</em></h2>
+      <p>Cztery etapy, jeden zespół. Wiesz, kto odpowiada za każdy z nich.</p>
+    </div>
+    <ol class="circuit" id="circuit">
+      {% for k in kroki %}
+      <li style="--i:{{ loop.index0 }}">
+        <div class="c-pic"><img src="img/v2/{{ k.img }}-s.webp" width="720" height="538" alt="" loading="lazy" decoding="async"></div>
+        <span class="node" aria-hidden="true"></span>
+        <span class="c-no">{{ k.n }}</span>
+        <h3>{{ k.t }}</h3>
+        <p>{{ k.p }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
