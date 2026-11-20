@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://qmala.pl/o-firmie.html">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0B1626">
+<link rel="preload" href="brand/logo-dark.webp" as="image">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,15 +21,22 @@
 <meta property="og:image" content="https://qmala.pl/brand/og.jpg">
 <link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=202611202335">
-<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="assets/site.css?v=202611202359">
+<script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('q-intro')||matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('no-intro');else sessionStorage.setItem('q-intro','1')}catch(e){h.classList.add('no-intro')}})(document.documentElement)</script>
 </head>
 <body data-page="o-firmie">
 <a class="skip" href="#tresc">Przejdź do treści</a>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-half intro-top"></div><div class="intro-half intro-bot"></div>
+  <div class="intro-core">
+    <img class="intro-logo" src="brand/logo-dark.webp" alt="" width="560" height="152">
+    <div class="intro-line"><i class="intro-wire"></i><span class="intro-led"></span></div>
+  </div>
+</div>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="index.html" aria-label="QMALA.PL Elektroinstalacje, strona główna"><img src="brand/logo-light.png" alt="" width="1140" height="309"></a>
+    <a class="brand" href="index.html" aria-label="QMALA.PL Elektroinstalacje, strona główna"><img src="brand/logo-dark.webp" alt="" width="560" height="152"></a>
     <nav class="nav-links" id="nav-links" aria-label="Główna">      <a href="oferta.html">Oferta</a>      <a href="realizacje.html">Realizacje</a>      <a href="referencje.html">Referencje</a>      <a href="o-firmie.html" aria-current="page">O firmie</a>      <a href="praca.html">Praca</a>      <a href="#kontakt">Kontakt</a>      <a class="btn btn-volt nav-m-call" href="tel:+48501739926"><svg aria-hidden="true"><use href="#i-phone"/></svg>501 739 926</a>
     </nav>
     <a class="btn btn-volt nav-call" href="tel:+48501739926"><svg aria-hidden="true"><use href="#i-phone"/></svg>501 739 926</a>
@@ -39,7 +47,7 @@
 <main id="tresc">
 <section class="phead dark" aria-labelledby="ph-h">
 <div class="phead-pic" aria-hidden="true"><img src="img/v2/firma-warsztat.webp" width="1376" height="768" alt="" fetchpriority="high"></div>  <div class="wrap phead-in">
-    <nav class="crumbs rv" aria-label="Ścieżka"><a href="index.html">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">O firmie</span></nav>
+    <nav class="crumbs rv" aria-label="Ścieżka"><a href="index.html">Strona główna</a><svg class="crumb-sep" aria-hidden="true"><use href="#i-chev"/></svg><span aria-current="page">O firmie</span></nav>
     <h1 id="ph-h"><span class="ln"><span>Rodzinny zakład <em>od 1978 roku</em></span></span></h1>
     <p class="lede rv" style="--d:.3s">Pracujemy we Wrocławiu od ponad czterdziestu lat, dziś w drugim pokoleniu.</p>
     <nav class="jump rv" style="--d:.45s" aria-label="Na tej stronie"><a href="#kim">Kim jesteśmy</a><a href="#dla-kogo">Dla kogo</a><a href="#jak">Jak działamy</a><a href="#dane">Dane firmy</a></nav>
@@ -142,7 +150,7 @@
       <p>Oddzwonimy z pytaniami i ceną. Wystarczy e-mail albo telefon.</p>
       <a class="bigtel" href="tel:+48501739926">501 739 926</a>
       <dl class="lines">
-        <div><dt>Wyceny</dt><dd><a href="tel:+48501148733">501 148 733</a><small>Mirosław Kumala · <a href="mailto:mkumala@wp.pl">mkumala@wp.pl</a></small></dd></div>
+        <div><dt>Wyceny</dt><dd><a href="tel:+48501148733">501 148 733</a><small>Mirosław Kumala, <a href="mailto:mkumala@wp.pl">mkumala@wp.pl</a></small></dd></div>
         <div><dt>Biuro</dt><dd><a href="mailto:biuro@qmala.pl">biuro@qmala.pl</a></dd></div>
         <div><dt>Praca</dt><dd><a href="praca.html">praca@qmala.pl</a></dd></div>
         <div><dt>Siedziba</dt><dd>ul. Andrzeja Cinciały 10/5<small>50-306 Wrocław</small></dd></div>
@@ -179,7 +187,7 @@
 <footer class="foot">
   <div class="wrap foot-in">
     <div class="foot-brand">
-      <img src="brand/logo-dark.png" alt="QMALA.PL Elektroinstalacje" width="1140" height="309" loading="lazy">
+      <img src="brand/logo-dark.webp" alt="QMALA.PL Elektroinstalacje" width="560" height="152" loading="lazy">
       <p>Zakład Elektro-Instalacyjny Wojciech Kumala. Rodzinna firma z Wrocławia, od 1978 roku.</p>
     </div>
     <div>
@@ -229,8 +237,9 @@
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z M14 3v4h4 M10 12h5 M10 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 16l5-5 4 4 3-3 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="9" r="1.5" fill="currentColor"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
-<script src="assets/site.js?v=202611202335" defer></script>
+<script src="assets/site.js?v=202611202359" defer></script>
 </body>
 </html>

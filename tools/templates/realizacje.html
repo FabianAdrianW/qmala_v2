@@ -2,34 +2,57 @@
 {% from "_m.html" import phead %}
 {% set title = "Realizacje: Politechnika, Muzeum, EIT+ | Qmala Wrocław" %}
 {% set description = "Zdjęcia z realizacji Zakładu Elektro-Instalacyjnego Wojciech Kumala: Politechnika Wrocławska, Muzeum Narodowe, EIT+, szkoły, osiedla i zakłady we Wrocławiu." %}
-{% set ns = namespace(n=0, years=[]) %}
+{% set ns = namespace(n=0, years=[], cnt={}) %}
 {% for r in realizacje %}{% set ns.n = ns.n + r.zdjecia|length %}{% if r.rok not in ns.years %}{% set _ = ns.years.append(r.rok) %}{% endif %}{% endfor %}
 {% block main %}
-{% call phead("Realizacje", "Rejestr <em>obiektów</em>", "Obiekty: " ~ realizacje|length ~ ", zdjęcia: " ~ ns.n ~ ". Kliknij zdjęcie, żeby je powiększyć.", "uslugi-oswietlenie") %}
-<nav class="jump rv" style="--d:.45s" aria-label="Rok realizacji">
-  {% for y in ns.years %}<a href="#r{{ y }}">{{ y }}</a>{% endfor %}
-</nav>
+{% call phead("Realizacje", "Obiekty, za które <em>odpowiadamy</em>", "Uczelnie, muzeum, szkoły, osiedla i zakłady. Wybierz rodzaj obiektu albo rok, kliknij kartę i obejrzyj zdjęcia.", "uslugi-oswietlenie") %}
+<dl class="plate plate-head rv" style="--d:.45s">
+  <div><dt>Obiekty</dt><dd>{{ realizacje|length }}</dd></div>
+  <div><dt>Zdjęcia</dt><dd>{{ ns.n }}</dd></div>
+  <div><dt>Lata</dt><dd>2011–2015</dd></div>
+  <div><dt>Stała obsługa</dt><dd>{{ realizacje|selectattr('rok', 'equalto', 'Stale')|list|length }}</dd></div>
+</dl>
 {% endcall %}
 
-<section class="sec grid-paper" aria-label="Lista realizacji">
-  <div class="wrap works">
-    {% set yrs = namespace(seen=[]) %}
-    {% for r in realizacje %}
-    <article class="work rv" id="{{ r.slug }}">
-      {% if r.rok not in yrs.seen %}<span class="anchor" id="r{{ r.rok }}"></span>{% set _ = yrs.seen.append(r.rok) %}{% endif %}
-      <header class="work-h">
-        <span class="work-yr">{{ r.rok }}</span>
-        <h2>{{ r.title }}</h2>
-        {% if r.opis %}<p>{{ r.opis }}</p>{% endif %}
-        <span class="work-n">{{ r.zdjecia|length }} zdj.</span>
-      </header>
-      <div class="shots">
-        {% for z in r.zdjecia %}
-        <button class="shot" type="button" data-set="{{ r.slug }}" data-full="{{ z }}" data-cap="{{ r.title }}" aria-label="Powiększ zdjęcie {{ loop.index }} z {{ r.zdjecia|length }}: {{ r.title }}"><img src="{{ z }}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="640" height="480"></button>
+<section class="sec grid-paper" id="lista" aria-labelledby="lista-h">
+  <div class="wrap">
+    <h2 class="sr" id="lista-h">Lista realizacji</h2>
+    <div class="filters rv" id="filters">
+      <div class="chips" role="group" aria-label="Rodzaj obiektu">
+        <button type="button" class="chip" data-kat="" aria-pressed="true">Wszystkie <span>{{ realizacje|length }}</span></button>
+        {% for k, label in kat.items() %}
+        <button type="button" class="chip" data-kat="{{ k }}" aria-pressed="false">{{ label }} <span>{{ realizacje|selectattr('kat', 'equalto', k)|list|length }}</span></button>
         {% endfor %}
       </div>
-    </article>
-    {% endfor %}
+      <div class="years" role="group" aria-label="Rok realizacji">
+        {% set maxn = namespace(v=1) %}
+        {% for y in ns.years %}{% set c = realizacje|selectattr('rok', 'equalto', y)|list|length %}{% if c > maxn.v %}{% set maxn.v = c %}{% endif %}{% endfor %}
+        {% for y in (ns.years|reject("equalto","Stale")|list|reverse|list) + (["Stale"] if "Stale" in ns.years else []) %}
+        {% set c = realizacje|selectattr('rok', 'equalto', y)|list|length %}
+        <button type="button" class="yr-bar" data-rok="{{ y }}" aria-pressed="false" aria-label="{{ y }}: obiektów {{ c }}"><i style="--h:{{ (c / maxn.v * 100)|round|int }}%"><b>{{ c }}</b></i><span>{{ y }}</span></button>
+        {% endfor %}
+      </div>
+    </div>
+    <p class="count rv" id="count" aria-live="polite">Pokazujemy {{ realizacje|length }} z {{ realizacje|length }} obiektów</p>
+
+    <div class="cases" id="cases">
+      {% for r in realizacje %}
+      <article class="case{{ ' wide' if r.wyrozniona and loop.index <= 2 }}" id="{{ r.slug }}" data-kat="{{ r.kat }}" data-rok="{{ r.rok }}">
+        <div class="case-pic">
+          {% if r.zdjecia %}<img src="{{ r.zdjecia[0] }}" alt="" loading="{{ 'eager' if loop.index <= 3 else 'lazy' }}" decoding="async" referrerpolicy="no-referrer" width="640" height="480">{% endif %}
+          <span class="case-ph" aria-hidden="true"><img src="brand/q-dark.png" alt="" width="315" height="309"></span>
+          <span class="case-yr">{{ r.rok }}</span>
+          {% if r.zdjecia %}<span class="case-n">{{ ico('img') }}{{ r.zdjecia|length|pl('zdjęcie', 'zdjęcia', 'zdjęć') }}</span>{% endif %}
+        </div>
+        <div class="case-tx">
+          <p class="case-k">{{ kat[r.kat] }}</p>
+          <h3>{% if r.zdjecia %}<button type="button" class="case-open" data-cap="{{ r.title }}" data-gallery="{{ r.zdjecia|join('|') }}">{{ r.title }}</button>{% else %}{{ r.title }}{% endif %}</h3>
+          {% if r.opis %}<p>{{ r.opis }}</p>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="empty" id="empty" hidden>Brak obiektów dla tych filtrów. <button type="button" class="link" id="reset">Pokaż wszystkie</button></p>
   </div>
 </section>
 

@@ -3,18 +3,18 @@
 {% set title = "Oferta: instalacje, rozdzielnice, LCN, pomiary | Qmala" %}
 {% set description = "Instalacje elektryczne, rozdzielnice, automatyka LCN, oświetlenie i iluminacje, projekty, pomiary, odgromy, sieci i monitoring. Wrocław i cała Polska." %}
 {% block main %}
-{% call phead("Oferta", "Oferta <em>w sześciu obwodach</em>", "Jedna ekipa od przyłącza po pomiary. Wybierz obwód albo przewiń całą rozdzielnicę.", "uslugi-rozdzielnice") %}
+{% call phead("Oferta", "Oferta <em>dla domów i firm</em>", "Projekt, montaż, pomiary i serwis w jednych rękach. Wybierz obszar albo przewiń całą ofertę.", "uslugi-rozdzielnice") %}
 <nav class="jump rv" style="--d:.45s" aria-label="Obszary oferty">
-  {% for g in oferta %}<a href="#{{ g.id }}"><span>{{ g.q }}</span>{{ g.krotko }}</a>{% endfor %}
+  {% for g in oferta %}<a href="#{{ g.id }}"><svg viewBox="0 0 24 24" aria-hidden="true">{{ g.ico }}</svg>{{ g.krotko }}</a>{% endfor %}
 </nav>
 {% endcall %}
 
 {% for g in oferta %}
 <section class="screen offer{{ ' flip' if loop.index is even }}{{ ' grid-paper' if loop.index is odd }}" id="{{ g.id }}" aria-labelledby="h-{{ g.id }}">
   <div class="wrap offer-in">
-    <div class="offer-pic rv"><img src="img/v2/{{ g.img }}.webp" width="1024" height="1024" alt="" loading="{{ 'eager' if loop.first else 'lazy' }}" decoding="async"><span class="offer-q" aria-hidden="true">{{ g.q }}</span></div>
+    <div class="offer-pic rv"><img src="img/v2/{{ g.img }}.webp" width="1024" height="1024" alt="" loading="{{ 'eager' if loop.first else 'lazy' }}" decoding="async"><span class="offer-q" aria-hidden="true"><svg viewBox="0 0 24 24">{{ g.ico }}</svg></span></div>
     <div class="offer-tx rv" style="--d:.1s">
-      <span class="pan-q">Obwód {{ g.q }}</span>
+      <span class="pan-q">{{ g.q }} / 06</span>
       <h2 id="h-{{ g.id }}">{{ g.nazwa }}</h2>
       <p class="lede">{{ g.opis }}</p>
       <ul class="checks">{% for u in g.uslugi %}<li>{{ ico('check') }}{{ u }}</li>{% endfor %}</ul>

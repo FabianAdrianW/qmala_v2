@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://qmala.pl/">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0B1626">
+<link rel="preload" href="brand/logo-dark.webp" as="image">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,17 +21,24 @@
 <meta property="og:image" content="https://qmala.pl/brand/og.jpg">
 <link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/geist-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="img/v2/hero.webp" imagesrcset="img/v2/hero-s.webp 720w, img/v2/hero.webp 1376w" imagesizes="(min-width: 820px) 55vw, 100vw"><link rel="stylesheet" href="assets/site.css?v=202611202335">
+<link rel="preload" as="image" href="img/v2/hero.webp" imagesrcset="img/v2/hero-s.webp 720w, img/v2/hero.webp 1376w" imagesizes="(min-width: 820px) 55vw, 100vw"><link rel="stylesheet" href="assets/site.css?v=202611202359">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Electrician","name":"Zakład Elektro-Instalacyjny Wojciech Kumala (Qmala)","url":"https://qmala.pl/","telephone":"+48501739926","email":"biuro@qmala.pl","foundingDate":"1978","areaServed":["Wrocław","Polska"],"address":{"@type":"PostalAddress","streetAddress":"ul. Andrzeja Cinciały 10/5","postalCode":"50-306","addressLocality":"Wrocław","addressCountry":"PL"},"image":"https://qmala.pl/brand/og.jpg"}
-</script><script>document.documentElement.classList.add('js')</script>
+</script><script>(function(h){h.classList.add('js');try{if(sessionStorage.getItem('q-intro')||matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('no-intro');else sessionStorage.setItem('q-intro','1')}catch(e){h.classList.add('no-intro')}})(document.documentElement)</script>
 </head>
 <body data-page="index">
 <a class="skip" href="#tresc">Przejdź do treści</a>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-half intro-top"></div><div class="intro-half intro-bot"></div>
+  <div class="intro-core">
+    <img class="intro-logo" src="brand/logo-dark.webp" alt="" width="560" height="152">
+    <div class="intro-line"><i class="intro-wire"></i><span class="intro-led"></span></div>
+  </div>
+</div>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="index.html" aria-label="QMALA.PL Elektroinstalacje, strona główna"><img src="brand/logo-light.png" alt="" width="1140" height="309"></a>
+    <a class="brand" href="index.html" aria-label="QMALA.PL Elektroinstalacje, strona główna"><img src="brand/logo-dark.webp" alt="" width="560" height="152"></a>
     <nav class="nav-links" id="nav-links" aria-label="Główna">      <a href="oferta.html">Oferta</a>      <a href="realizacje.html">Realizacje</a>      <a href="referencje.html">Referencje</a>      <a href="o-firmie.html">O firmie</a>      <a href="praca.html">Praca</a>      <a href="#kontakt">Kontakt</a>      <a class="btn btn-volt nav-m-call" href="tel:+48501739926"><svg aria-hidden="true"><use href="#i-phone"/></svg>501 739 926</a>
     </nav>
     <a class="btn btn-volt nav-call" href="tel:+48501739926"><svg aria-hidden="true"><use href="#i-phone"/></svg>501 739 926</a>
@@ -47,7 +55,7 @@
   </div>
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="kicker rv">Zakład Elektro-Instalacyjny · Wrocław</p>
+      <p class="kicker rv"><span class="led on" aria-hidden="true"></span>Zakład elektroinstalacyjny we Wrocławiu</p>
       <h1 id="h1"><span class="ln"><span>Instalacje elektryczne</span></span> <span class="ln"><span>we Wrocławiu</span></span> <span class="ln"><em>od 1978 roku</em></span></h1>
       <p class="lede rv" style="--d:.4s">Rodzinny zakład, dziś w drugim pokoleniu. Projektujemy, montujemy i mierzymy instalacje w domach, biurach, szkołach i na uczelniach.</p>
       <div class="actions rv" style="--d:.55s">
@@ -59,7 +67,7 @@
       <div><dt>Rok założenia</dt><dd>1978</dd></div>
       <div><dt>Pokolenia</dt><dd>2</dd></div>
       <div><dt>Obiekty na liście</dt><dd>17</dd></div>
-      <div><dt>Zasięg</dt><dd>Wrocław · PL</dd></div>
+      <div><dt>Zasięg</dt><dd>Cała Polska</dd></div>
     </dl>
   </div>
   <svg class="hero-wire" viewBox="0 0 1000 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 5H1000"/><path class="pulse" pathLength="100" d="M0 5H1000"/></svg>
@@ -68,54 +76,46 @@
 <section class="screen grid-paper" id="oferta" aria-labelledby="of-h">
   <div class="wrap">
     <div class="head head-split rv">
-      <h2 id="of-h">Sześć obwodów, <em>jedna ekipa</em></h2>
-      <p>Nie szukasz osobno projektanta, montera i pomiarowca. Wybierz obwód i zobacz, co w nim robimy.</p>
+      <h2 id="of-h">Czym się <em>zajmujemy</em></h2>
+      <p>Projekt, montaż, pomiary i serwis w jednych rękach. Wybierz obszar, żeby zobaczyć zakres prac.</p>
     </div>
-    <div class="switch rv">
-      <div class="board" role="tablist" aria-label="Obszary oferty">
-        <button class="mod" type="button" role="tab" id="tab-instalacje" aria-controls="pan-instalacje" aria-selected="true" tabindex="0">
-          <span class="mod-q">Q1</span>
-          <span class="lever" aria-hidden="true"><i></i></span>
-          <span class="mod-l">Instalacje</span>
+    <div class="picker rv">
+      <div class="svc-list" role="tablist" aria-label="Obszary oferty" aria-orientation="vertical">
+        <button class="svc-tab" type="button" role="tab" id="tab-instalacje" aria-controls="pan-instalacje" aria-selected="true" tabindex="0">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+          <span class="svc-name"><small>01</small>Instalacje elektryczne</span>
           <span class="led" aria-hidden="true"></span>
         </button>
-        <button class="mod" type="button" role="tab" id="tab-rozdzielnice" aria-controls="pan-rozdzielnice" aria-selected="false" tabindex="-1">
-          <span class="mod-q">Q2</span>
-          <span class="lever" aria-hidden="true"><i></i></span>
-          <span class="mod-l">Rozdzielnice</span>
+        <button class="svc-tab" type="button" role="tab" id="tab-rozdzielnice" aria-controls="pan-rozdzielnice" aria-selected="false" tabindex="-1">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8.5 8v4M12 8v4M15.5 8v4M8 16.5h8"/></svg></span>
+          <span class="svc-name"><small>02</small>Rozdzielnice</span>
           <span class="led" aria-hidden="true"></span>
         </button>
-        <button class="mod" type="button" role="tab" id="tab-automatyka" aria-controls="pan-automatyka" aria-selected="false" tabindex="-1">
-          <span class="mod-q">Q3</span>
-          <span class="lever" aria-hidden="true"><i></i></span>
-          <span class="mod-l">Automatyka LCN</span>
+        <button class="svc-tab" type="button" role="tab" id="tab-automatyka" aria-controls="pan-automatyka" aria-selected="false" tabindex="-1">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20H3z"/><path d="M9 15.5a4.2 4.2 0 0 1 6 0"/><circle cx="12" cy="17.6" r=".6" fill="currentColor"/></svg></span>
+          <span class="svc-name"><small>03</small>Inteligentny dom i automatyka</span>
           <span class="led" aria-hidden="true"></span>
         </button>
-        <button class="mod" type="button" role="tab" id="tab-oswietlenie" aria-controls="pan-oswietlenie" aria-selected="false" tabindex="-1">
-          <span class="mod-q">Q4</span>
-          <span class="lever" aria-hidden="true"><i></i></span>
-          <span class="mod-l">Oświetlenie</span>
+        <button class="svc-tab" type="button" role="tab" id="tab-oswietlenie" aria-controls="pan-oswietlenie" aria-selected="false" tabindex="-1">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 18h5M10.5 21h3M12 3a6 6 0 0 0-4 10.5c.7.7 1.1 1.5 1.1 2.5h5.8c0-1 .4-1.8 1.1-2.5A6 6 0 0 0 12 3z"/></svg></span>
+          <span class="svc-name"><small>04</small>Oświetlenie i iluminacje</span>
           <span class="led" aria-hidden="true"></span>
         </button>
-        <button class="mod" type="button" role="tab" id="tab-pomiary" aria-controls="pan-pomiary" aria-selected="false" tabindex="-1">
-          <span class="mod-q">Q5</span>
-          <span class="lever" aria-hidden="true"><i></i></span>
-          <span class="mod-l">Pomiary</span>
+        <button class="svc-tab" type="button" role="tab" id="tab-pomiary" aria-controls="pan-pomiary" aria-selected="false" tabindex="-1">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16a8 8 0 1 1 16 0"/><path d="M12 16l4-5.5"/><circle cx="12" cy="16" r="1.3" fill="currentColor"/></svg></span>
+          <span class="svc-name"><small>05</small>Projekty, pomiary i odgromy</span>
           <span class="led" aria-hidden="true"></span>
         </button>
-        <button class="mod" type="button" role="tab" id="tab-sieci" aria-controls="pan-sieci" aria-selected="false" tabindex="-1">
-          <span class="mod-q">Q6</span>
-          <span class="lever" aria-hidden="true"><i></i></span>
-          <span class="mod-l">Niskie prądy</span>
+        <button class="svc-tab" type="button" role="tab" id="tab-sieci" aria-controls="pan-sieci" aria-selected="false" tabindex="-1">
+          <span class="svc-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="19" r="2.2"/><circle cx="19" cy="19" r="2.2"/><path d="M12 7.2V13M12 13l-5.6 4.2M12 13l5.6 4.2"/></svg></span>
+          <span class="svc-name"><small>06</small>Sieci, telewizja i zabezpieczenia</span>
           <span class="led" aria-hidden="true"></span>
         </button>
-        <p class="board-rail" aria-hidden="true">QMALA · 230/400 V</p>
       </div>
       <div class="pans">
         <article class="pan on" role="tabpanel" id="pan-instalacje" aria-labelledby="tab-instalacje">
-          <div class="pan-pic"><img src="img/v2/uslugi-instalacje-s.webp" srcset="img/v2/uslugi-instalacje-s.webp 720w, img/v2/uslugi-instalacje.webp 1024w" sizes="(min-width: 820px) 28vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="pan-pic"><img src="img/v2/uslugi-instalacje-s.webp" srcset="img/v2/uslugi-instalacje-s.webp 720w, img/v2/uslugi-instalacje.webp 1024w" sizes="(min-width: 820px) 26vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
           <div class="pan-tx">
-            <span class="pan-q">Obwód Q1</span>
             <h3>Instalacje elektryczne</h3>
             <p>Nowe instalacje i modernizacje w domach, biurach i obiektach przemysłowych. Przyjeżdżamy też do awarii.</p>
             <ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg>Instalacje w budynkach mieszkalnych</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Instalacje w obiektach przemysłowych</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Instalacje w obiektach użyteczności publicznej</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Usuwanie awarii elektrycznych</li></ul>
@@ -126,9 +126,8 @@
           </div>
         </article>
         <article class="pan" role="tabpanel" id="pan-rozdzielnice" aria-labelledby="tab-rozdzielnice">
-          <div class="pan-pic"><img src="img/v2/uslugi-rozdzielnice-s.webp" srcset="img/v2/uslugi-rozdzielnice-s.webp 720w, img/v2/uslugi-rozdzielnice.webp 1024w" sizes="(min-width: 820px) 28vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="pan-pic"><img src="img/v2/uslugi-rozdzielnice-s.webp" srcset="img/v2/uslugi-rozdzielnice-s.webp 720w, img/v2/uslugi-rozdzielnice.webp 1024w" sizes="(min-width: 820px) 26vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
           <div class="pan-tx">
-            <span class="pan-q">Obwód Q2</span>
             <h3>Rozdzielnice</h3>
             <p>Dobieramy aparaty, kompletujemy rozdzielnicę i montujemy ją na obiekcie.</p>
             <ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg>Rozdzielnie elektryczne</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Kompletacja i montaż rozdzielnic nn</li></ul>
@@ -139,9 +138,8 @@
           </div>
         </article>
         <article class="pan" role="tabpanel" id="pan-automatyka" aria-labelledby="tab-automatyka">
-          <div class="pan-pic"><img src="img/v2/uslugi-automatyka-s.webp" srcset="img/v2/uslugi-automatyka-s.webp 720w, img/v2/uslugi-automatyka.webp 1024w" sizes="(min-width: 820px) 28vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="pan-pic"><img src="img/v2/uslugi-automatyka-s.webp" srcset="img/v2/uslugi-automatyka-s.webp 720w, img/v2/uslugi-automatyka.webp 1024w" sizes="(min-width: 820px) 26vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
           <div class="pan-tx">
-            <span class="pan-q">Obwód Q3</span>
             <h3>Inteligentny dom i automatyka</h3>
             <p>Światło, rolety i ogrzewanie sterowane z jednego miejsca. Jesteśmy partnerem systemu LCN.</p>
             <ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg>Inteligentne domy w systemie LCN</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Systemy automatyki i sterowania</li></ul>
@@ -152,9 +150,8 @@
           </div>
         </article>
         <article class="pan" role="tabpanel" id="pan-oswietlenie" aria-labelledby="tab-oswietlenie">
-          <div class="pan-pic"><img src="img/v2/uslugi-oswietlenie-s.webp" srcset="img/v2/uslugi-oswietlenie-s.webp 720w, img/v2/uslugi-oswietlenie.webp 1024w" sizes="(min-width: 820px) 28vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="pan-pic"><img src="img/v2/uslugi-oswietlenie-s.webp" srcset="img/v2/uslugi-oswietlenie-s.webp 720w, img/v2/uslugi-oswietlenie.webp 1024w" sizes="(min-width: 820px) 26vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
           <div class="pan-tx">
-            <span class="pan-q">Obwód Q4</span>
             <h3>Oświetlenie i iluminacje</h3>
             <p>Oświetlenie wnętrz, iluminacje elewacji i tereny zewnętrzne, razem z pomiarem natężenia.</p>
             <ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg>Oświetlenie dekoracyjne i użytkowe</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Iluminacje elewacji</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Pomiary natężenia oświetlenia</li></ul>
@@ -165,9 +162,8 @@
           </div>
         </article>
         <article class="pan" role="tabpanel" id="pan-pomiary" aria-labelledby="tab-pomiary">
-          <div class="pan-pic"><img src="img/v2/uslugi-pomiary-s.webp" srcset="img/v2/uslugi-pomiary-s.webp 720w, img/v2/uslugi-pomiary.webp 1024w" sizes="(min-width: 820px) 28vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="pan-pic"><img src="img/v2/uslugi-pomiary-s.webp" srcset="img/v2/uslugi-pomiary-s.webp 720w, img/v2/uslugi-pomiary.webp 1024w" sizes="(min-width: 820px) 26vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
           <div class="pan-tx">
-            <span class="pan-q">Obwód Q5</span>
             <h3>Projekty, pomiary i odgromy</h3>
             <p>Projekty i protokoły, które przyjmie inspektor nadzoru i ubezpieczyciel.</p>
             <ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg>Projekty elektryczne</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Pomiary elektryczne</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Przeglądy okresowe instalacji elektrycznych i odgromowych</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Instalacje odgromowe</li></ul>
@@ -178,9 +174,8 @@
           </div>
         </article>
         <article class="pan" role="tabpanel" id="pan-sieci" aria-labelledby="tab-sieci">
-          <div class="pan-pic"><img src="img/v2/uslugi-sieci-s.webp" srcset="img/v2/uslugi-sieci-s.webp 720w, img/v2/uslugi-sieci.webp 1024w" sizes="(min-width: 820px) 28vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="pan-pic"><img src="img/v2/uslugi-sieci-s.webp" srcset="img/v2/uslugi-sieci-s.webp 720w, img/v2/uslugi-sieci.webp 1024w" sizes="(min-width: 820px) 26vw, 100vw" width="720" height="720" alt="" loading="lazy" decoding="async"></div>
           <div class="pan-tx">
-            <span class="pan-q">Obwód Q6</span>
             <h3>Sieci, telewizja i zabezpieczenia</h3>
             <p>Wszystko, co niskoprądowe, robimy przy okazji jednej wizyty.</p>
             <ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg>Sieci komputerowe i telefoniczne (okablowanie strukturalne)</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Anteny telewizji naziemnej i satelitarnej, montaż i strojenie</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Wideofony i domofony</li><li><svg aria-hidden="true"><use href="#i-check"/></svg>Monitoring</li></ul>
@@ -343,7 +338,7 @@
       <p>Oddzwonimy z pytaniami i ceną. Wystarczy e-mail albo telefon.</p>
       <a class="bigtel" href="tel:+48501739926">501 739 926</a>
       <dl class="lines">
-        <div><dt>Wyceny</dt><dd><a href="tel:+48501148733">501 148 733</a><small>Mirosław Kumala · <a href="mailto:mkumala@wp.pl">mkumala@wp.pl</a></small></dd></div>
+        <div><dt>Wyceny</dt><dd><a href="tel:+48501148733">501 148 733</a><small>Mirosław Kumala, <a href="mailto:mkumala@wp.pl">mkumala@wp.pl</a></small></dd></div>
         <div><dt>Biuro</dt><dd><a href="mailto:biuro@qmala.pl">biuro@qmala.pl</a></dd></div>
         <div><dt>Praca</dt><dd><a href="praca.html">praca@qmala.pl</a></dd></div>
         <div><dt>Siedziba</dt><dd>ul. Andrzeja Cinciały 10/5<small>50-306 Wrocław</small></dd></div>
@@ -380,7 +375,7 @@
 <footer class="foot">
   <div class="wrap foot-in">
     <div class="foot-brand">
-      <img src="brand/logo-dark.png" alt="QMALA.PL Elektroinstalacje" width="1140" height="309" loading="lazy">
+      <img src="brand/logo-dark.webp" alt="QMALA.PL Elektroinstalacje" width="560" height="152" loading="lazy">
       <p>Zakład Elektro-Instalacyjny Wojciech Kumala. Rodzinna firma z Wrocławia, od 1978 roku.</p>
     </div>
     <div>
@@ -430,8 +425,9 @@
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
   <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z M14 3v4h4 M10 12h5 M10 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 16l5-5 4 4 3-3 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="9" r="1.5" fill="currentColor"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
-<script src="assets/site.js?v=202611202335" defer></script>
+<script src="assets/site.js?v=202611202359" defer></script>
 </body>
 </html>
